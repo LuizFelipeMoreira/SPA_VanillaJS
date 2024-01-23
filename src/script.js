@@ -1,25 +1,15 @@
-// const route = (event) => {
-//   event = event || window.event;
-//   event.preventDefault();
-//   window.history.pushState({}, '', event.target.href);
-//   handleLocation();
-// };
+document.addEventListener('click', (e) => {
+  const { target } = e;
 
-// const routes = {
-//   404: './pages/404.html',
-//   '/': './pages/index.html',
-//   '/about': './pages/about.html',
-//   '/lorem': './pages/lorem.html',
-// };
+  if (!target.maches('nav a')) {
+    return;
+  }
+  e.preventDefault();
+  urlRoutes();
+});
 
-// const handleLocation = async () => {
-//   const path = window.location.pathname;
-//   const route = routes[path] || routes[404];
-//   const html = await fetch(route).then((data) => data.text());
-//   document.getElementById('main-page').innerHTML = html;
-// };
+const urlRoutes = (event) => {
+  event = event || window.event;
+};
 
-// window.onpopstate = handleLocation;
-// window.route = route;
-
-// handleLocation();
+const urlLocationRender = async () => {};
